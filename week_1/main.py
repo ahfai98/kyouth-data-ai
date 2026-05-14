@@ -1,13 +1,13 @@
 import sys
 from pathlib import Path
 from src.ingestor import ingest_all_mhtml
-# from src.processor import process_all_html 
+from src.processor import process_all_html 
 # from src.loader import load_all_jsons      
 # from src.profiler import run_data_profile   
 
 SOURCE_DIR = Path("data/0_source")
 BRONZE_DIR = Path("data/1_bronze")
-# SILVER_DIR = Path("data/2_silver")
+SILVER_DIR = Path("data/2_silver")
 # GOLD_DIR = Path("data/3_gold")
 DB_NAME = "jobs.db"
 
@@ -23,8 +23,7 @@ def main():
     if command == "ingest":
         ingest_all_mhtml(str(SOURCE_DIR), str(BRONZE_DIR))
     elif command == "process":
-        # process_all_html(str(BRONZE_DIR), str(SILVER_DIR))
-        print("Process command - to be implemented")
+        process_all_html(str(BRONZE_DIR), str(SILVER_DIR))
     elif command == "load":
         # load_all_jsons(str(SILVER_DIR), str(GOLD_DIR))
         print("Load command - to be implemented")
