@@ -30,7 +30,7 @@ wheels = [
 [[package]]
 name = "week-1"
 version = "0.1.0"
-source = { editable = "." }
+source = { virtual = "." }
 
 [package.optional-dependencies]
 dev = [
